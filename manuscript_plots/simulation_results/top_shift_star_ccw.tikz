@@ -1,0 +1,22 @@
+\begin{tikzpicture}
+\definecolor{color0}{rgb}{0.917647058823529,0.917647058823529,0.949019607843137}\begin{axis}[width=.7\linewidth, height=.45\linewidth,xlabel=Iterations, cycle multi list={Dark2-8},axis background/.style={fill=color0},grid=both, grid style={white},axis line style={white},every tick/.style={white},legend style={
+at={(1.05, 1.0)}, anchor=north west},ylabel=Mean category count]
+\addplot +[mark=none, dotted, thick] table[col sep=comma, x=Iteration, y=cc_mean] {simulation_results/top_shift_ccw_clique.csv};
+\addlegendentry{fully connected}
+\addplot +[mark=none, solid, thick] table[col sep=comma, x=Iteration, y=cc_mean] {simulation_results/top_shift_ccw_hub.csv};
+\addlegendentry{star balanced}
+\addplot +[mark=none, solid, thick] table[col sep=comma, x=Iteration, y=cc_mean] {simulation_results/top_shift_ccw_hub_hearer.csv};
+\addlegendentry{star speaker}
+\addplot +[mark=none, solid, thick] table[col sep=comma, x=Iteration, y=cc_mean] {simulation_results/top_shift_ccw_hub_speaker.csv};
+\addlegendentry{star hearer}
+\draw[dashed] (axis cs:9999,-0.1) -- (axis cs:9999,1);
+\end{axis}
+\begin{axis}[width=.7\linewidth, height=.45\linewidth,at={(0, -.41\linewidth)}, xlabel=Iterations,cycle multi list={Dark2-8},axis background/.style={fill=color0},grid=both, grid style={white},axis line style={white},every tick/.style={white},legend style={
+at={(0, -0.2)}, anchor=north west},ylabel=Lexicon size]
+\addplot +[mark=none, dotted, thick] table[col sep=comma, x=Iteration, y=wc] {simulation_results/top_shift_ccw_clique.csv};
+\addplot +[mark=none, solid, thick] table[col sep=comma, x=Iteration, y=wc] {simulation_results/top_shift_ccw_hub.csv};
+\addplot +[mark=none, solid, thick] table[col sep=comma, x=Iteration, y=wc] {simulation_results/top_shift_ccw_hub_hearer.csv};
+\addplot +[mark=none, solid, thick] table[col sep=comma, x=Iteration, y=wc] {simulation_results/top_shift_ccw_hub_speaker.csv};
+\draw[dashed] (axis cs:9999,-0.1) -- (axis cs:9999,1);
+\end{axis}
+\end{tikzpicture}

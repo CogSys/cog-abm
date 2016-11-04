@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+\begin{axis}[xlabel=Iterations, legend style={
+at={(0, -0.2)}, anchor=north west}, ylabel=Mean GCS]
+\addplot +[mark=none] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/top_shift_clique.csv};
+\addlegendentry{clique}
+\addplot +[mark=none] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/top_shift_hub.csv};
+\addlegendentry{hub}
+\addplot +[mark=none] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/top_shift_hub_hearer.csv};
+\addlegendentry{hub hearer}
+\addplot +[mark=none] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/top_shift_hub_speaker.csv};
+\addlegendentry{hub speaker}
+\end{axis}
+\end{tikzpicture}

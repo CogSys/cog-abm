@@ -1,0 +1,40 @@
+There are two ways to use steels_main:
+
+    - run from command line:
+
+        python steels_main.py -f result
+
+        which will run basic steels simulation and saves result file in cog_simulations/results_of_simulation/ directory
+
+    - run from command line:
+
+        python steels_main.py -p your_simulation_name.json -f results
+
+        which will run simulation defined in file your_simulation_name.json that should be placed in cog_simulations/examples/simulations/ directory. Results file will be saved in cog_simulations/results_of_simulation/ directory.
+
+Example simulation file:
+
+{
+    "dump_freq": 10,
+    "num_iter": 1000,
+    "num_agents": 5,
+    "learning" :
+    {
+        "alpha" : 0.1,
+        "beta" : 1,
+        "sigma" : 1
+    },
+    "networks": [
+        {
+            "type": "Line",
+            "start": 1
+        },
+        {
+            "source": "graph.json",
+            "start": 500
+        }
+    ]
+}
+
+How to define your own simulation:
+

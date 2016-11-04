@@ -1,0 +1,31 @@
+{
+    "dump_freq": 50,
+    "num_iter": 10000,
+    "networks": [
+    {
+        "type": "Source", "source": "../../examples/networks/graph_max_avg_clust.json", "start": 1
+    }
+    ],
+    "num_agents": 16,
+    "alpha": 0.1,
+    "beta": 1,
+    "sigma": 1,
+    "interactions" :[
+    {
+                     "id": 1,
+                     "type": "GuessingGame",
+                     "start": 1,
+                     "context_size": 4,
+                     "learning": true,
+                     "inc_category_threshold": 0.95
+                     
+    }
+                     ],
+    "environments" : [
+    {
+                      "start" : 1,
+                      "name" : "global",
+                      "source" : "../../examples/environment/1269_munsell_chips.json",
+                      "distance" : 50
+    }]
+}

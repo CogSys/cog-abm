@@ -1,0 +1,76 @@
+{
+  "dump_freq": 50,
+  "num_iter": 20000,
+  "num_agents": 16,
+  "alpha" : 0.1,
+  "beta" : 1,
+  "sigma" : 1,
+  "interactions_sets" : {
+    "1": [
+      {
+        "id": 1,
+        "type": "GuessingGame",
+        "context_size": 4,
+        "learning": true,
+        "inc_category_threshold": 0.95,
+        "network": {
+          "type": "Source", "source": "../../networks/graph_max_avg_bet.json"
+        },
+        "environment": {
+          "name": "global1",
+          "source": "../../../examples/environment/600_munsell_chips_gauss_1.json",
+          "distance": 50
+        }
+      },
+      {
+        "id": 2,
+        "type": "GuessingGame",
+        "game_name": "CL",
+        "context_size": 4,
+        "learning": false,
+        "inc_category_threshold": 0.95,
+        "network": {
+          "type": "Source", "source": "../../networks/graph_max_avg_bet.json"
+        },
+        "environment": {
+          "name": "global2",
+          "source": "../../../examples/environment/600_munsell_chips_gauss_2.json",
+          "distance": 50
+        }
+      }
+    ],
+    "10000": [
+      {
+        "id": 1,
+        "type": "GuessingGame",
+        "context_size": 4,
+        "learning": false,
+        "inc_category_threshold": 0.95,
+        "network": {
+          "type": "Source", "source": "../../networks/graph_max_avg_bet.json"
+        },
+        "environment": {
+          "name": "global1",
+          "source": "../../../examples/environment/600_munsell_chips_gauss_1.json",
+          "distance": 50
+        }
+      },
+      {
+        "id": 2,
+        "type": "GuessingGame",
+        "game_name": "CL",
+        "context_size": 4,
+        "learning": true,
+        "inc_category_threshold": 0.95,
+        "network": {
+          "type": "Source", "source": "../../networks/graph_max_avg_bet.json"
+        },
+        "environment": {
+          "name": "global2",
+          "source": "../../../examples/environment/600_munsell_chips_gauss_2.json",
+          "distance": 50
+        }
+      }
+    ]
+  }
+}

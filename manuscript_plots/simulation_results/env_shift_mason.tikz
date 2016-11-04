@@ -1,0 +1,37 @@
+\begin{tikzpicture}
+\begin{axis}[width=.7\linewidth, height=.45\linewidth, ymax=0.9,xlabel=Iterations, x label style={at={(axis description cs:0.5,0.03)}, anchor=north}, y label style={at={(axis description cs:0.05,.5)} }, legend style={
+at={(1.05, 1.0)}, anchor=north west},ylabel=Mean LCS]
+\addplot +[mark=none, dotted, thick] table[col sep=comma, x=Iteration, y=CSA_mean] {simulation_results/env_shift_clique.csv};
+\addlegendentry{clique}
+\addplot +[mark=none, dashed, thick] table[col sep=comma, x=Iteration, y=CSA_mean] {simulation_results/env_shift_max_avg_bet.csv};
+\addlegendentry{max avg bet}
+\addplot +[mark=none, dashed, thick] table[col sep=comma, x=Iteration, y=CSA_mean] {simulation_results/env_shift_max_avg_clust.csv};
+\addlegendentry{max avg clust}
+\addplot +[mark=none, dashed, thick] table[col sep=comma, x=Iteration, y=CSA_mean] {simulation_results/env_shift_max_max_bet.csv};
+\addlegendentry{max max bet}
+\addplot +[mark=none, dashed, thick] table[col sep=comma, x=Iteration, y=CSA_mean] {simulation_results/env_shift_min_max_clos.csv};
+\addlegendentry{min max clos}
+\addplot +[mark=none, solid, thick] table[col sep=comma, x=Iteration, y=CSA_mean] {simulation_results/env_shift_max_var_cons.csv};
+\addlegendentry{max var cons}
+\addplot +[mark=none, solid, thick] table[col sep=comma, x=Iteration, y=CSA_mean] {simulation_results/env_shift_min_avg_bet.csv};
+\addlegendentry{min avg bet}
+\addplot +[mark=none, solid, thick] table[col sep=comma, x=Iteration, y=CSA_mean] {simulation_results/env_shift_min_avg_clust.csv};
+\addlegendentry{min avg clust}
+\addplot +[mark=none, solid, thick] table[col sep=comma, x=Iteration, y=CSA_mean] {simulation_results/env_shift_max_max_clos.csv};
+\addlegendentry{max max clos}
+\draw[dashed] (axis cs:10000,0) -- (axis cs:10000,1);
+\end{axis}
+\begin{axis}[width=.7\linewidth, height=.45\linewidth, ymax=0.9,at={(0, -.41\linewidth)}, xlabel=Iterations,x label style={at={(axis description cs:0.5,0.03)}, anchor=north}, y label style={at={(axis description cs:0.05,.5)} }, legend style={
+at={(0, -0.2)}, anchor=north west}, ylabel=Mean GCS]
+\addplot +[mark=none, dotted, thick] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/env_shift_clique.csv};
+\addplot +[mark=none, dashed, thick] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/env_shift_max_avg_bet.csv};
+\addplot +[mark=none, dashed, thick] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/env_shift_max_avg_clust.csv};
+\addplot +[mark=none, dashed, thick] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/env_shift_max_max_bet.csv};
+\addplot +[mark=none, dashed, thick] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/env_shift_min_max_clos.csv};
+\addplot +[mark=none, solid, thick] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/env_shift_max_var_cons.csv};
+\addplot +[mark=none, solid, thick] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/env_shift_min_avg_bet.csv};
+\addplot +[mark=none, solid, thick] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/env_shift_min_avg_clust.csv};
+\addplot +[mark=none, solid, thick] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/env_shift_max_max_clos.csv};
+\draw[dashed] (axis cs:10000,0) -- (axis cs:10000,1);
+\end{axis}
+\end{tikzpicture}

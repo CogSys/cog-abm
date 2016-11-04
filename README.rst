@@ -9,7 +9,7 @@ The main aim of this project proposal is to describe how perceptually grounded c
 
 Humans are equipped in senses that are the physiological capacities within organisms that provide inputs for perception. The biological structure of senses, the way how they process incoming input from external world, the classification of available stimulus repertoires, categorization, overlapping of similar ones, and corrections of natural noise were studied by neurobiology, neuroscience, cognitive psychology, and human physiology. In last decades several mathematical models of human senses were proposed. Those models can be implemented as the software algorithms and allow for the construction of artificial agents that can be further used for modeling of the role of human perception system in categorization processes. In addition several works of Steels proved the possibility to couple those models of human perception with the dynamics of naming process, therefore simulating in silico how a perceptually grounded categorical repertoire can become sufficiently shared among the members of a population [2]_. The population of artificial agents was able to build color categories and share them so that one agent from the population can use the word to get another agent to pick out the proper object from a set of colored objects in a cognitive scene [3]_, [4]_.
 
-In our research proposal we address two issues: the dynamics of categorization process (i.e. equilibration process, where the time dependent changes of categorical repertoire in a group are observed), and the role of naming (i.e. as the natural interaction substrate shared between individuals in a population). Each senses perception and categorization of the input sensory information will be investigated, comparison between artificial agents models and human populations will be performed. The several types of internal Agents architecture will be tested, including advanced learning algorithms, such as RC Reservoir Computing (ESN Echo State Networks, LSM Liquid State Machines [5]_). Moreover the set of interacting Agents itself will be modeled using our in-house modification of RC algorithm that builds the ensemble of interacting LSM. So-called Liquid State Society (LSS) framework is able to model more efficiently the category formation and exchange, naming process in social learning systems. This model will be later used in mixed human-agent populations for better understanding the coupling between the categorization and the naming processes simulated using the senses models. Such experimental setups allow for selecting, which factors are crucial for successful communication events, and proper calibration of the mathematical models of considered senses.
+In our research proposal we address two issues: the dynamics of categorization process (i.e. equilibration process, where the time dependent changes of categorical repertoire in a group are observed), and the role of naming (i.e. as the natural interaction substrate shared between individuals in a population). Each senses perception and categorization of the input sensory information will be investigated, comparison between artificial agents models and human populations will be performed. The several types of internal Agents architecture will be tested, including advanced learning algorithms, such as RC Reservoir Computing (ESN Echo State Network, LSM Liquid State Machines [5]_). Moreover the set of interacting Agents itself will be modeled using our in-house modification of RC algorithm that builds the ensemble of interacting LSM. So-called Liquid State Society (LSS) framework is able to model more efficiently the category formation and exchange, naming process in social learning systems. This model will be later used in mixed human-agent populations for better understanding the coupling between the categorization and the naming processes simulated using the senses models. Such experimental setups allow for selecting, which factors are crucial for successful communication events, and proper calibration of the mathematical models of considered senses.
 
 
 .. [1] see http://en.wikipedia.org/wiki/Agent-based_model
@@ -32,15 +32,15 @@ Usage
 
 To run this software you need Python in version 2.x (3.x is not supported).
 
-There are mostly libraries which helps you develop your own simulations. Sample simulation you might find in src/steels/ folder. As of version 0.3 all parameters and configuration of simulations is stored in XML files.
+There are mostly libraries which helps you develop your own simulations. Sample simulation you might find in cog_simulations/steels/ folder. As of version 0.3 all parameters and configuration of simulations is stored in JSON files.
 
 
 Steels experiment
 -----------------
 An example experiment. It was described in work of Steels, L. and Belpaeme, T. (2005).
-Sample configuration is in files src/simulation.xml  and in src/simulation2.xml
-To run one go to src folder and run:
-python steels/steels_main.py -p "simulation.xml"
+Sample configuration is in files examples/simulations/basic_simulation.json
+To run one go to cog_simulations folder and run:
+python steels/steels_main.py -p "../examples/simulations/basic_simulation.json"
 this should generate some files – some of them are used by presenter which visualizes result by showing agents categorization at given points, and one is used by analyzer
 
 Usage: python steels_main.py [options]
@@ -72,7 +72,7 @@ Options:
 Presenter
 ---------
 This program uses files with extension .pout . It presents agents categorization at given iteration.
-To run it go to src/presenter
+To run it go to cog_simulations/presenter
 Usage: munsell_palette.py [options]
 
 Options:
@@ -91,14 +91,14 @@ Options:
 Example of full “usage path”
 ----------------------------
 
-Run simulation. From /src/steels run:
-python steels_main.py -p "simulation.xml"
+Run simulation. From /cog_simulations/steels run:
+python steels_main.py -p "../../examples/simulations/basic_simulation.json"
 
 now see result in chart:
 python analyzer.py -f \*.result -c it DS CS --xlabel="iteration" --ylabel "discriminative success & communicative success"
 
 to see categorization:
-from /src/presenter run:
+from /cog_simulations/presenter run:
 python munsell_palette.py -d ../ -a 10 --findfocal strength_based -l t
 
 
@@ -126,7 +126,7 @@ Authors
 =======
 
 :Authors:
-    *Programming:* Konrad Kurdej, Michał Łukasik, Marek Maj
+    *Programming:* Konrad Kurdej, Michał Łukasik, Marek Maj, Przemysław Wróblewski, Julian Zubek
 
     *Mentoring:* Dariusz Plewczyński, Franciszek Rakowski
 

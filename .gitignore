@@ -3,3 +3,9 @@
 *.bak
 *.swp
 */.coverage
+#SIMULATION RESULTS:
+*.pout
+#PROJECT FILES:
+*.project
+*.pydevproject
+!results_of_simulation

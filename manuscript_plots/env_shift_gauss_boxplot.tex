@@ -1,0 +1,46 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{statistics}
+\usepgfplotslibrary{colorbrewer}
+\begin{document}
+\footnotesize
+\begin{tikzpicture}
+\definecolor{color0}{rgb}{0.917647058823529,0.917647058823529,0.949019607843137}\begin{axis}[boxplot/draw direction=x,
+axis background/.style={fill=color0},every tick/.style={white},xmajorgrids=true,
+ymajorgrids=true,
+xminorgrids=true,
+minor x tick num=1,
+axis line style={white},every major grid/.style={white},
+every minor grid/.style={white},
+cycle multi list={Dark2-8},
+ytick={-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12},
+yticklabels={fully connected, star balanced, star speaker, star hearer, max avg bet, max avg clust, max max bet, max max clos, max var cons, min avg bet, min avg clust, min max clos}
+]
+\addplot+[boxplot={draw position=-1}] table[row sep=\\,y index=0]{
+fully connected\\0.66375\\ 0.66625\\ 0.70625\\ 0.63875\\ 0.65375\\ 0.6325\\ 0.67625\\ 0.70625\\ 0.63375\\ 0.66375\\};
+\addplot+[boxplot={draw position=-2}] table[row sep=\\,y index=0]{
+star balanced\\0.69\\ 0.655\\ 0.7075\\ 0.66625\\ 0.63125\\ 0.63625\\ 0.68375\\ 0.6825\\ 0.6275\\ 0.665\\};
+\addplot+[boxplot={draw position=-3}] table[row sep=\\,y index=0]{
+star speaker\\0.6\\ 0.59\\ 0.6925\\ 0.76625\\ 0.71\\ 0.66625\\ 0.48625\\ 0.685\\ 0.65125\\ 0.55125\\};
+\addplot+[boxplot={draw position=-4}] table[row sep=\\,y index=0]{
+star hearer\\0.7775\\ 0.785\\ 0.7675\\ 0.81875\\ 0.725\\ 0.765\\ 0.7775\\ 0.7525\\ 0.7575\\ 0.76625\\};
+\addplot+[boxplot={draw position=-5}] table[row sep=\\,y index=0]{
+max avg bet\\0.71625\\ 0.78125\\ 0.76125\\ 0.72625\\ 0.74125\\ 0.72375\\ 0.74625\\ 0.7225\\ 0.72625\\ 0.72125\\};
+\addplot+[boxplot={draw position=-6}] table[row sep=\\,y index=0]{
+max avg clust\\0.8\\ 0.7725\\ 0.75875\\ 0.77375\\ 0.785\\ 0.735\\ 0.73875\\ 0.72625\\ 0.75\\ 0.76875\\};
+\addplot+[boxplot={draw position=-7}] table[row sep=\\,y index=0]{
+max max bet\\0.71875\\ 0.7625\\ 0.72625\\ 0.745\\ 0.7775\\ 0.735\\ 0.7175\\ 0.7325\\ 0.75375\\ 0.72125\\};
+\addplot+[boxplot={draw position=-8}] table[row sep=\\,y index=0]{
+max max clos\\0.74625\\ 0.785\\ 0.71\\ 0.71375\\ 0.73625\\ 0.6975\\ 0.69625\\ 0.805\\ 0.72625\\ 0.72625\\};
+\addplot+[boxplot={draw position=-9}] table[row sep=\\,y index=0]{
+max var cons\\0.705\\ 0.71375\\ 0.70875\\ 0.67625\\ 0.72375\\ 0.7275\\ 0.7125\\ 0.75625\\ 0.74875\\ 0.79125\\};
+\addplot+[boxplot={draw position=-10}] table[row sep=\\,y index=0]{
+min avg bet\\0.72125\\ 0.7025\\ 0.75125\\ 0.775\\ 0.72875\\ 0.76\\ 0.73625\\ 0.70625\\ 0.695\\ 0.7275\\};
+\addplot+[boxplot={draw position=-11}] table[row sep=\\,y index=0]{
+min avg clust\\0.725\\ 0.75125\\ 0.7375\\ 0.72625\\ 0.7075\\ 0.71375\\ 0.7475\\ 0.70625\\ 0.7675\\ 0.75875\\};
+\addplot+[boxplot={draw position=-12}] table[row sep=\\,y index=0]{
+min max clos\\0.74625\\ 0.71625\\ 0.645\\ 0.72\\ 0.76125\\ 0.7275\\ 0.75375\\ 0.7575\\ 0.7675\\ 0.785\\};
+\end{axis}
+\end{tikzpicture}
+\end{document}

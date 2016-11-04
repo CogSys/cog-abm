@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<simulation>
+	<history freq="1000"/>
+	<network source="graph2.xml"/>
+	<agents source="agent2.xml"/>
+
+	<interaction id="1" type="GuessingGame">
+		<params>
+			<alpha value="0.1"/>
+			<beta value="1"/>
+			<sigma value="10"/>
+			<num_iter value="3000"/>
+			<context_size value="4"/>
+			<inc_category_treshold value="0.90"/>
+			<classifier name="SteelsClassifier"/>
+			<svm_cost value="1.0"/>
+		</params>
+	</interaction>
+
+	<environment name="global" source="../../data/wcs_input_data/1269_munsell_chips_reconstructed.xml">
+		<params>
+			<distance value="45"/>
+			<word_naming_per_color value="../../data/wcs_input_data/c-lab-1268.txt"/>
+		</params>
+	</environment>
+
+</simulation>

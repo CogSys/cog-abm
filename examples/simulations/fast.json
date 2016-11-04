@@ -1,0 +1,61 @@
+{
+  "dump_freq": 100,
+  "num_iter": 10000,
+  "num_agents": 20,
+  "alpha" : 0.1,
+  "beta" : 1,
+  "sigma" : 1,
+  "interactions_sets" : {
+    "1": [
+      {
+        "id": 1,
+        "type": "GuessingGame",
+        "context_size": 4,
+        "learning": true,
+        "inc_category_threshold": 0.95,
+        "network": {
+          "type": "Line"
+        },
+        "environment": {
+          "name": "global",
+          "source": "../../examples/environment/1269_munsell_chips.json",
+          "distance": 50
+        }
+      },
+      {
+        "id": 1,
+        "type": "GuessingGame",
+        "game_name": "New_game",
+        "context_size": 4,
+        "learning": false,
+        "inc_category_threshold": 0.95,
+        "network": {
+          "type": "Clique"
+        },
+        "environment": {
+          "name": "global",
+          "source": "../../examples/environment/1269_munsell_chips.json",
+          "distance": 50
+        }
+      }
+    ],
+    "5000": [
+      {
+        "id": 1,
+        "type": "GuessingGame",
+        "game_name": "New_game",
+        "context_size": 4,
+        "learning": true,
+        "inc_category_threshold": 0.95,
+        "network": {
+          "type": "Clique"
+        },
+        "environment": {
+          "name": "global",
+          "source": "../../examples/environment/1269_munsell_chips.json",
+          "distance": 50
+        }
+      }
+    ]
+  }
+}

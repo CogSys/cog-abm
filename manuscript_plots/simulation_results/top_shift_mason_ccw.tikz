@@ -1,0 +1,37 @@
+\begin{tikzpicture}
+\definecolor{color0}{rgb}{0.917647058823529,0.917647058823529,0.949019607843137}\begin{axis}[width=.7\linewidth, height=.45\linewidth,xlabel=Iterations, cycle multi list={Dark2-8},axis background/.style={fill=color0},grid=both, grid style={white},axis line style={white},every tick/.style={white},legend style={
+at={(1.05, 1.0)}, anchor=north west},ylabel=Mean category count]
+\addplot +[mark=none, dotted, thick] table[col sep=comma, x=Iteration, y=cc_mean] {simulation_results/top_shift_ccw_clique.csv};
+\addlegendentry{fully connected}
+\addplot +[mark=none, dashed, thick] table[col sep=comma, x=Iteration, y=cc_mean] {simulation_results/top_shift_ccw_max_avg_bet.csv};
+\addlegendentry{max avg bet}
+\addplot +[mark=none, dashed, thick] table[col sep=comma, x=Iteration, y=cc_mean] {simulation_results/top_shift_ccw_max_avg_clust.csv};
+\addlegendentry{max avg clust}
+\addplot +[mark=none, dashed, thick] table[col sep=comma, x=Iteration, y=cc_mean] {simulation_results/top_shift_ccw_max_max_bet.csv};
+\addlegendentry{max max bet}
+\addplot +[mark=none, dashed, thick] table[col sep=comma, x=Iteration, y=cc_mean] {simulation_results/top_shift_ccw_min_max_clos.csv};
+\addlegendentry{min max clos}
+\addplot +[mark=none, solid, thick] table[col sep=comma, x=Iteration, y=cc_mean] {simulation_results/top_shift_ccw_max_var_cons.csv};
+\addlegendentry{max var cons}
+\addplot +[mark=none, solid, thick] table[col sep=comma, x=Iteration, y=cc_mean] {simulation_results/top_shift_ccw_min_avg_bet.csv};
+\addlegendentry{min avg bet}
+\addplot +[mark=none, solid, thick] table[col sep=comma, x=Iteration, y=cc_mean] {simulation_results/top_shift_ccw_min_avg_clust.csv};
+\addlegendentry{min avg clust}
+\addplot +[mark=none, solid, thick] table[col sep=comma, x=Iteration, y=cc_mean] {simulation_results/top_shift_ccw_max_max_clos.csv};
+\addlegendentry{max max clos}
+\draw[dashed] (axis cs:9999,-0.1) -- (axis cs:9999,1);
+\end{axis}
+\begin{axis}[width=.7\linewidth, height=.45\linewidth,at={(0, -.41\linewidth)}, xlabel=Iterations,cycle multi list={Dark2-8},axis background/.style={fill=color0},grid=both, grid style={white},axis line style={white},every tick/.style={white},legend style={
+at={(0, -0.2)}, anchor=north west},ylabel=Lexicon size]
+\addplot +[mark=none, dotted, thick] table[col sep=comma, x=Iteration, y=wc] {simulation_results/top_shift_ccw_clique.csv};
+\addplot +[mark=none, dashed, thick] table[col sep=comma, x=Iteration, y=wc] {simulation_results/top_shift_ccw_max_avg_bet.csv};
+\addplot +[mark=none, dashed, thick] table[col sep=comma, x=Iteration, y=wc] {simulation_results/top_shift_ccw_max_avg_clust.csv};
+\addplot +[mark=none, dashed, thick] table[col sep=comma, x=Iteration, y=wc] {simulation_results/top_shift_ccw_max_max_bet.csv};
+\addplot +[mark=none, dashed, thick] table[col sep=comma, x=Iteration, y=wc] {simulation_results/top_shift_ccw_min_max_clos.csv};
+\addplot +[mark=none, solid, thick] table[col sep=comma, x=Iteration, y=wc] {simulation_results/top_shift_ccw_max_var_cons.csv};
+\addplot +[mark=none, solid, thick] table[col sep=comma, x=Iteration, y=wc] {simulation_results/top_shift_ccw_min_avg_bet.csv};
+\addplot +[mark=none, solid, thick] table[col sep=comma, x=Iteration, y=wc] {simulation_results/top_shift_ccw_min_avg_clust.csv};
+\addplot +[mark=none, solid, thick] table[col sep=comma, x=Iteration, y=wc] {simulation_results/top_shift_ccw_max_max_clos.csv};
+\draw[dashed] (axis cs:9999,-0.1) -- (axis cs:9999,1);
+\end{axis}
+\end{tikzpicture}

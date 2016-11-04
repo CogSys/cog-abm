@@ -1,0 +1,23 @@
+\begin{tikzpicture}
+\begin{axis}[xlabel=Iterations, legend style={
+at={(0, -0.2)}, anchor=north west}, ylabel=Mean GCS]
+\addplot +[mark=none] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/top_shift_clique.csv};
+\addlegendentry{clique}
+\addplot +[mark=none] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/top_shift_max_avg_bet.csv};
+\addlegendentry{max avg bet}
+\addplot +[mark=none] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/top_shift_max_avg_clust.csv};
+\addlegendentry{max avg clust}
+\addplot +[mark=none] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/top_shift_max_max_bet.csv};
+\addlegendentry{max max bet}
+\addplot +[mark=none] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/top_shift_max_max_clos.csv};
+\addlegendentry{max max clos}
+\addplot +[mark=none] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/top_shift_max_var_cons.csv};
+\addlegendentry{max var cons}
+\addplot +[mark=none] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/top_shift_min_avg_bet.csv};
+\addlegendentry{min avg bet}
+\addplot +[mark=none] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/top_shift_min_avg_clust.csv};
+\addlegendentry{min avg clust}
+\addplot +[mark=none] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/top_shift_min_max_clos.csv};
+\addlegendentry{min max clos}
+\end{axis}
+\end{tikzpicture}

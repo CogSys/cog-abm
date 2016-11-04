@@ -1,8 +1,10 @@
 numpy
 scipy
 orange
+sklearn
 python-graph-core
 matplotlib
 progressbar
 #optional:
 #python-graph-dot
+coverage

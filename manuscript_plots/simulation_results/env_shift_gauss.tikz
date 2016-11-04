@@ -1,0 +1,34 @@
+\begin{tikzpicture}
+\definecolor{color0}{rgb}{0.917647058823529,0.917647058823529,0.949019607843137}\begin{axis}[width=.7\linewidth, height=.45\linewidth, ymax=0.9,xlabel=Iterations, cycle multi list={Dark2-8},axis background/.style={fill=color0},grid=both, grid style={white},axis line style={white},every tick/.style={white},legend style={
+at={(1.05, 1.0)}, anchor=north west},ylabel=Mean CS\textsubscript{A}]
+\addplot +[mark=none, dotted, thick] table[col sep=comma, x=Iteration, y=CSA_mean] {simulation_results/env_shift_gauss_clique.csv};
+\addplot +[mark=none, dashed, thick] table[col sep=comma, x=Iteration, y=CSA_mean] {simulation_results/env_shift_gauss_max_avg_bet.csv};
+\addplot +[draw=none] table[col sep=comma, x=Iteration, y=CSA_mean] {simulation_results/env_shift_gauss_max_avg_clust.csv};
+\addplot +[draw=none] table[col sep=comma, x=Iteration, y=CSA_mean] {simulation_results/env_shift_gauss_max_max_bet.csv};
+\addplot +[draw=none] table[col sep=comma, x=Iteration, y=CSA_mean] {simulation_results/env_shift_gauss_min_max_clos.csv};
+\addplot +[draw=none] table[col sep=comma, x=Iteration, y=CSA_mean] {simulation_results/env_shift_gauss_max_var_cons.csv};
+\addplot +[mark=none, dashed, thick] table[col sep=comma, x=Iteration, y=CSA_mean] {simulation_results/env_shift_gauss_min_avg_bet.csv};
+\addplot +[draw=none] table[col sep=comma, x=Iteration, y=CSA_mean] {simulation_results/env_shift_gauss_min_avg_clust.csv};
+\addplot +[draw=none] table[col sep=comma, x=Iteration, y=CSA_mean] {simulation_results/env_shift_gauss_max_max_clos.csv};
+\addplot +[mark=none, solid, thick] table[col sep=comma, x=Iteration, y=CSA_mean] {simulation_results/env_shift_gauss_hub.csv};
+\addplot +[mark=none, solid, thick] table[col sep=comma, x=Iteration, y=CSA_mean] {simulation_results/env_shift_gauss_hub_hearer.csv};
+\addplot +[mark=none, solid, thick] table[col sep=comma, x=Iteration, y=CSA_mean] {simulation_results/env_shift_gauss_hub_speaker.csv};
+\legend{fully connected, max avg bet, , , , , min avg bet, , , star balanced, star speaker, star hearer}\draw[dashed] (axis cs:9999,-0.1) -- (axis cs:9999,1);
+\end{axis}
+\begin{axis}[width=.7\linewidth, height=.45\linewidth, ymax=0.9,at={(0, -.41\linewidth)}, xlabel=Iterations,cycle multi list={Dark2-8},axis background/.style={fill=color0},grid=both, grid style={white},axis line style={white},every tick/.style={white},legend style={
+at={(0, -0.2)}, anchor=north west},ylabel=Mean CS\textsubscript{B}]
+\addplot +[mark=none, dotted, thick] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/env_shift_gauss_clique.csv};
+\addplot +[mark=none, dashed, thick] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/env_shift_gauss_max_avg_bet.csv};
+\addplot +[draw=none] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/env_shift_gauss_max_avg_clust.csv};
+\addplot +[draw=none] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/env_shift_gauss_max_max_bet.csv};
+\addplot +[draw=none] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/env_shift_gauss_min_max_clos.csv};
+\addplot +[draw=none] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/env_shift_gauss_max_var_cons.csv};
+\addplot +[mark=none, dashed, thick] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/env_shift_gauss_min_avg_bet.csv};
+\addplot +[draw=none] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/env_shift_gauss_min_avg_clust.csv};
+\addplot +[draw=none] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/env_shift_gauss_max_max_clos.csv};
+\addplot +[mark=none, solid, thick] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/env_shift_gauss_hub.csv};
+\addplot +[mark=none, solid, thick] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/env_shift_gauss_hub_hearer.csv};
+\addplot +[mark=none, solid, thick] table[col sep=comma, x=Iteration, y=CLA_mean] {simulation_results/env_shift_gauss_hub_speaker.csv};
+\draw[dashed] (axis cs:9999,-0.1) -- (axis cs:9999,1);
+\end{axis}
+\end{tikzpicture}

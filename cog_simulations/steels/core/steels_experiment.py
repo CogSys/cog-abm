@@ -46,7 +46,7 @@ def steels_experiment(num_iter=1000, dump_freq=50, alpha=0.1, beta=1, sigma=10, 
 
 
 def load_games_labels(interactions_sets):
-    labels = ["DG", "GG"]
+    labels = ["DG", "GG", "NG"]
 
     for interactions_set in interactions_sets.values():
         for interaction_data in interactions_set:
@@ -84,6 +84,7 @@ def load_agents(agents, games_labels):
 def load_interactions_sets(interactions_sets):
     from discrimination_game import DiscriminationGame
     from guessing_game import GuessingGame
+    from naming_game import NamingGame
 
     from cog_simulations.cog_abm.extras.color import Color
     from cog_simulations.cog_abm.extras.extract_colour_order import extract_colour_order
@@ -110,6 +111,9 @@ def load_interactions_sets(interactions_sets):
             if interaction_data["type"] == "GuessingGame":
                 interaction = GuessingGame(learning_mode=learning, game_name=game_name, role_model=role_model,
                                            agents=interaction_data["agents"])
+            elif interaction_data["type"] == "NamingGame":
+                interaction = NamingGame(learning_mode=learning, game_name=game_name, role_model=role_model,
+                                         agents=interaction_data["agents"])
             else:
                 interaction = DiscriminationGame(context_size, float(inc_category_threshold), game_name=game_name,
                                                  agents=interaction_data["agents"])

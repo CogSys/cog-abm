@@ -1,0 +1,76 @@
+{
+  "dump_freq": 1,
+  "num_iter": 20000,
+  "num_agents": 16,
+  "alpha" : 0.1,
+  "beta" : 1,
+  "sigma" : 1,
+  "interactions_sets" : {
+    "1": [
+      {
+        "id": 1,
+        "type": "NamingGame",
+        "context_size": 4,
+        "learning": true,
+        "inc_category_threshold": 0.95,
+        "network": {
+          "type": "Hub"
+        },
+        "environment": {
+          "name": "global1",
+          "source": "../../../examples/environment/16_colors1.json",
+          "distance": 1
+        }
+      },
+      {
+        "id": 2,
+        "type": "NamingGame",
+        "game_name": "CL",
+        "context_size": 4,
+        "learning": false,
+        "inc_category_threshold": 0.95,
+        "network": {
+          "type": "Hub"
+        },
+        "environment": {
+          "name": "global2",
+          "source": "../../../examples/environment/16_colors2.json",
+          "distance": 1
+        }
+      }
+    ],
+    "10000": [
+      {
+        "id": 1,
+        "type": "NamingGame",
+        "context_size": 4,
+        "learning": false,
+        "inc_category_threshold": 0.95,
+        "network": {
+          "type": "Hub"
+        },
+        "environment": {
+          "name": "global1",
+          "source": "../../../examples/environment/16_colors1.json",
+          "distance": 1
+        }
+      },
+      {
+        "id": 2,
+        "type": "NamingGame",
+        "game_name": "CL",
+        "context_size": 4,
+        "learning": true,
+        "inc_category_threshold": 0.95,
+        "network": {
+          "type": "Hub"
+        },
+        "environment": {
+          "name": "global2",
+          "source": "../../../examples/environment/16_colors2.json",
+          "distance": 1
+        }
+      }
+    ]
+  }
+}

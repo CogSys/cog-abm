@@ -76,10 +76,9 @@ class DiscriminationGame(Interaction):
         # ^^^^ They are already shuffled - and needed when different classes.
         return context, topic
 
-    def interact_one_agent(self, context=None, topic=None):
+    def interact_one_agent(self, agent, context=None, topic=None):
         if context is None or topic is None:
             context, topic = self.get_setup()
-        agent = random.choice(self.agents.agents)
         success, _, _, _ = self.play_with_learning(agent, context, topic)
         self.save_result(agent, success)
         return success

@@ -44,7 +44,7 @@ class RandomStimuliChooser(StimuliChooser):
             for _ in xrange(n):
                 ret.append(get_stimulus(stimuli[avail_stimuli]))
                 apoint = (ret[-1].L, ret[-1].a, ret[-1].b)
-                avail_stimuli[stimuli_tree.query_radius(apoint, 50.0)[0]] = 0
+                avail_stimuli[stimuli_tree.query_radius([apoint], 50.0)[0]] = 0
                 if sum(avail_stimuli) == 0:
                     break
             if len(ret) == n:

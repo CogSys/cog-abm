@@ -140,14 +140,6 @@ This software is fork of **COG-ABM** from account **cogcomp**.
 License
 =======
 
-This software is dual-licensed.
+This software is licensed under LGPL-3.0 license.
 
-By commercial usage we mean:
-
-- selling software that uses any part of this software
-- providing service that uses any part of this software
-
-With the restriction of non-commercial usage you can use this software with application of AGPL-3.0 license. See **NC_LICENSE.rst** for more information.
-
-
-License for commercial usage is under development.
+https://www.gnu.org/licenses/lgpl-3.0.en.html
